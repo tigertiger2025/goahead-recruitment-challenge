@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保險團隊招聘挑戰</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-trophy"></i> 保險團隊招聘挑戰</h1>
+            <div class="user-info" id="userInfo">
+                <button onclick="login()">登入</button>
+            </div>
+        </header>
+
+        <!-- 登入模態框 -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h3>管理員登入 / 參加者註冊</h3>
+                <input type="password" id="adminPassword" placeholder="管理員密碼">
+                <button onclick="adminLogin()">管理員登入</button>
+                <hr>
+                <input type="text" id="userName" placeholder="您的姓名">
+                <button onclick="register()">註冊參加者</button>
+            </div>
+        </div>
+
+        <!-- 排行榜 -->
+        <div class="leaderboards">
+            <div class="leaderboard-card">
+                <h3><i class="fas fa-handshake"></i> 首次面談排名</h3>
+                <div id="interviewRank"></div>
+            </div>
+            <div class="leaderboard-card">
+                <h3><i class="fas fa-file-signature"></i> 考試報名排名</h3>
+                <div id="examRank"></div>
+            </div>
+            <div class="leaderboard-card">
+                <h3><i class="fas fa-clipboard-check"></i> 入職Form排名</h3>
+                <div id="formRank"></div>
+            </div>
+        </div>
+
+        <!-- 數據更新區 -->
+        <div class="update-section">
+            <h3>更新我的進度</h3>
+            <div class="update-form">
+                <div class="input-group">
+                    <label>首次面談數量：</label>
+                    <input type="number" id="interviewCount" min="0">
+                </div>
+                <div class="input-group">
+                    <label>已報名考試數量：</label>
+                    <input type="number" id="examCount" min="0">
+                </div>
+                <div class="input-group">
+                    <label>已填入職Form數量：</label>
+                    <input type="number" id="formCount" min="0">
+                </div>
+                <button onclick="updateMyStats()">更新數據</button>
+            </div>
+        </div>
+
+        <!-- 完整排行榜鏈接 -->
+        <div class="full-rankings">
+            <a href="interview.html">查看完整面談排名</a>
+            <a href="exam.html">查看完整考試報名排名</a>
+            <a href="form.html">查看完整Form排名</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
